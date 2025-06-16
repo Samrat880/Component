@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import customBrokerIcon from '../assets/custom-broker.svg';
+
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -17,24 +19,40 @@ export default function Login() {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-50">
-      <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
-        <div className="flex flex-col items-center mb-6">
-          <div className="bg-blue-600 p-3 rounded-full text-white">
-            <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 11c0 1.104-.896 2-2 2s-2-.896-2-2 2-2 2-2 2 .896 2 2z" />
-            </svg>
-          </div>
-          <h2 className="text-xl font-bold mt-4">Customs Broker Portal</h2>
-          <p className="text-gray-500 text-sm">Sign in to manage your customs filings and clients</p>
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 flex items-center justify-center p-4 relative overflow-hidden">
+
+      <div className="bg-white p-8 rounded-3xl shadow-xl/50 w-full max-h-[400px] max-w-sm min-h-[500px] flex flex-col justify-center transform transition-all duration-300 hover:scale-105">
+
+        <div className="flex flex-row gap-2 m-2 ">
+        <div className="bg-gradient-to-r from-blue-500 to-purple-500 p-3 rounded-xl shadow-lg  w-20 h-18 justify-center items-center">
+          <img src={customBrokerIcon} alt="Custom Broker Logo" className="h-12 w-12 justify-center items-center" />
+        </div >
+        <>
+          <h2 div className="text-3xl font-bold flex-nowrap text-center mb-2 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent " >Customs Broker Portal</h2>
+        </>
         </div>
-        <form onSubmit={handleLogin} className="space-y-4">
-          <input className="w-full border rounded p-2" placeholder="Enter your email" value={email} onChange={(e) => setEmail(e.target.value)} />
-          <input type="password" className="w-full border rounded p-2" placeholder="Enter your password" value={password} onChange={(e) => setPassword(e.target.value)} />
+        <div className=" justify-items-center ">
+          <p className="text-gray-500 text-sm m-3 flex gap-1.5 text-center">Sign in to manage your customs filings and clients</p>
+        </div>
+        <form onSubmit={handleLogin} className="space-y-6">
+
+          <input 
+          className="w-full border rounded p-2" 
+          placeholder="Enter your email" 
+          value={email} 
+          onChange={(e) => setEmail(e.target.value)} />
+
+          <input
+          type= "password" 
+          className="w-full border rounded p-2" 
+          placeholder="Enter your password" 
+          value={password} 
+          onChange={(e) => setPassword(e.target.value)}/>
+
           {error && <p className="text-red-500 text-sm">{error}</p>}
-          <button type="submit" className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition">Sign In</button>
+
+          <button type="submit" className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 rounded-xl font-semibold shadow-lg transform transition-all duration-200 hover:scale-105 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-transparent disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none">Sign In</button>
         </form>
-        <p className="text-center text-sm text-gray-500 mt-4">Demo credentials: any email and password</p>
       </div>
     </div>
   );

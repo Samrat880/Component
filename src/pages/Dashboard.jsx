@@ -20,7 +20,7 @@ export default function Dashboard() {
 
   return (
     <div className="flex min-h-screen">
-      <Sidebar />
+      <Sidebar/>
       <div className="flex-1 bg-gray-50 p-6">
         <Header />
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">

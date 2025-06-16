@@ -1,16 +1,22 @@
-import { Link } from "react-router-dom";
 
 export default function Sidebar() {
   return (
-    <div className="w-64 bg-white shadow h-screen p-4 hidden md:block">
-      <h1 className="text-xl font-bold mb-6">Customs Portal</h1>
+    <div className="w-64 bg-gradient-to-b from-slate-900 to-slate-800 text-white p-6 shadow-2xl">
+      <div className="mb-8">
+      <div className="flex items-center space-x-3">
+        <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl flex items-center justify-center">
+          <span className="text-white font-bold">🏢</span>
+        </div>
+        <h1 className="text-xl font-bold">Customs Portal</h1>
+      </div>
+    </div>
       <nav className="space-y-2">
-        <Link to="/dashboard" className="block text-blue-600">Dashboard</Link>
-        <Link to="#" className="block text-gray-700">Filings</Link>
-        <Link to="#" className="block text-gray-700">Customers</Link>
-        <Link to="#" className="block text-gray-700">Help</Link>
+      {['Dashboard', 'Filings', 'Clients', 'Reports', 'Settings'].map((item) => (
+        <div key={item} className="px-4 py-3 rounded-xl hover:bg-white/10 transition-all duration-200 cursor-pointer group">
+          <span className="group-hover:text-blue-300 transition-colors duration-200">{item}</span>
+        </div>
+      ))}
       </nav>
-      <div className="absolute bottom-4 left-4 text-sm text-gray-500">John Doe — Licensed Broker</div>
     </div>
   );
 }
