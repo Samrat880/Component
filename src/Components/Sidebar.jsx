@@ -33,7 +33,7 @@ export default function Sidebar() {
         </nav>
       </div>
 
-      <div className="flex items-center mt-auto flex-row gap-5 ">
+      <div className="flex items-center mt-auto flex-row gap-5 cursor-pointer ">
             <div className="w-14 h-14 bg-gradient-to-b from-slate-600 to-slate-500 rounded-4xl flex items-center justify-center">
               <span className="text-white text-4xl font-bold">👨‍💼</span>
             </div>
