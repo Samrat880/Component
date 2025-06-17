@@ -18,11 +18,11 @@ export default function Dashboard() {
   if (error) return <p className="text-red-500 p-4">Error loading data</p>;
   if (loading) return <p className="text-4xl min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 flex items-center justify-center p-4 relative overflow-hidden ">Loading...</p>;
   return (
-  <div className="flex min-h-screen">
+  <div className="flex flex-col md:flex-row min-h-screen ml-20">
     <Sidebar />
-    <div className="ml-64 flex-1 bg-gray-50 p-6">
+    <div className="flex-1 bg-gray-50 p-4 md:ml-44">
       <Header />
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
+      <div className="grid grid-cols-1  md:grid-cols-4 gap-4 mb-6 ">
         <SummaryCard title="Pending Filings" value="3" color="orange" />
         <SummaryCard title="Awaiting Approval" value="4" color="yellow" />
         <SummaryCard title="Completed Today" value="12" color="green" />

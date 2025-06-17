@@ -9,7 +9,7 @@ export default function Header() {
   };
 
   return (
-    <div className="sticky top-0 z-50 flex justify-between items-center mb-3 bg-white/80 backdrop-blur-lg border border-white/20 rounded-2xl p-6 shadow-xl">
+    <div className="sticky top-0 z-50  flex justify-between items-center mb-3 bg-white/80 backdrop-blur-lg border border-white/20 rounded-2xl p-6 shadow-xl">
       <h2 className="text-2xl font-semibold">Dashboard</h2>
       <button
         onClick={handleLogout}
